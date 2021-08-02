@@ -1,9 +1,10 @@
 
+def remote = [:]
+remote.name = "docker"
+remote.host = "192.168.0.20"
+remote.allowAnyHosts = true
+
 pipeline{
-    def remote = [:]
-    remote.name = "docker"
-    remote.host = "192.168.0.20"
-    remote.allowAnyHosts = true
     agent any 
 
     stages {
