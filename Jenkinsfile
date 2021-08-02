@@ -6,10 +6,6 @@ remote.allowAnyHosts = true
 
 pipeline{
     agent any 
-    withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'SERVER_PASSWORD', usernameVariable: 'SERVER_USER')]) {
-                
-                remote.user= SERVER_USER;
-                remote.password= SERVER_PASSWORD;
 
     stages {
         stage('Prueba de Conexion ssh'){
@@ -22,6 +18,10 @@ pipeline{
                 pwd
                 """
                 */
+            withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'SERVER_PASSWORD', usernameVariable: 'SERVER_USER')]) {
+                
+                remote.user= SERVER_USER;
+                remote.password= SERVER_PASSWORD;
 
                 sshCommand remote: remote, command: 'ls -la'
                     }
