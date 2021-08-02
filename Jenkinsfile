@@ -11,7 +11,7 @@ pipeline{
         stage('Prueba de Conexion ssh'){
             steps {
                 sshagent(credentials:['UserandPassword']){
-                    sh 'echo pwd'
+                    sh 'pwd'
 
                 }
                 
