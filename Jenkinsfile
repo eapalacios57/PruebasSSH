@@ -5,7 +5,7 @@ pipeline{
         stage('Prueba de Conexion ssh'){
             steps {
                 sh """
-                ssh docker@192.168.0.20
+                ssh -i pureba docker@192.168.0.20
                 ls -la
                 """
             }
