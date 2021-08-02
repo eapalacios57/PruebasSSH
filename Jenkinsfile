@@ -9,7 +9,18 @@ pipeline{
 
     stages {
         stage('Prueba de Conexion ssh'){
-            steps {/*
+            steps {
+                sshagent(credentials:['UserandPassword']){
+                    sh 'echo pwd'
+
+                }
+                
+                
+                
+                
+                
+                
+                /*
             withCredentials([sshUserPrivateKey(credentialsId: 'e0f51ef7-be00-439e-8675-3771459564ae', keyFileVariable: 'llave', passphraseVariable: '', usernameVariable: 'username')]) {
                sh """
                 ssh-keyscan -H 192.168.0.20 >> ~/.ssh/known_hosts;               
@@ -17,13 +28,14 @@ pipeline{
                 ls -la
                 pwd
                 """
-                */
-            withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'SERVER_PASSWORD', usernameVariable: 'SERVER_USER')]) {
+                withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'SERVER_PASSWORD', usernameVariable: 'SERVER_USER')]) {
                 
                 remote.user= SERVER_USER;
                 remote.password= SERVER_PASSWORD;
 
                 sshCommand remote: remote, command: 'ls -la'
+                */
+            
                     }
                 }
                 
