@@ -8,7 +8,6 @@ pipeline{
                sh """
                 ssh-keyscan -H 192.168.0.20 >> ~/.ssh/known_hosts;               
                 ssh $llave $username@192.168.0.20
-
                 ls -la
                 pwd
                 """
