@@ -10,6 +10,7 @@ pipeline{
                 ssh -i pruebas docker@192.168.0.20
 
                 ls -la
+                pwd
                 """
             }
 
