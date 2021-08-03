@@ -12,6 +12,11 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
+                     ssh -o StrictHostKeyChecking=no -l birc@190.85.106.202 'whoami'
+                    '''
+                    /*
+                    sh '''
+                    
                     echo ls -la | plink birc@190.85.106.202 -pw s1st3m4s
                     "exit"
                     '''
