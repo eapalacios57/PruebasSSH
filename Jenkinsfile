@@ -14,9 +14,9 @@ pipeline{
                 /*sshagent(credentials:['UserandPassword']){
                     sh 'pwd'*/
                 def remote = [:]
-                   remote.name = 'birc'
-                   remote.host = "192.168.0.20"
-                   remote.allowAnyHosts = true
+                remote.name = 'birc'
+                remote.host = "192.168.0.20"
+                remote.allowAnyHosts = true
                 withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'password', usernameVariable: 'username')]) {
                 // some block
                 remote.user = username
