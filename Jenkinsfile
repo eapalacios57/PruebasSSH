@@ -13,7 +13,7 @@ pipeline{
                 sshagent(['UserandPassword']){
                     sh '''
                     [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
-                    ssh docker@192.168.0.20
+                    plink docker@192.168.0.20 -pw s1st3m4s
 
                     '''
 
