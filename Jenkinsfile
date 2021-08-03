@@ -10,9 +10,10 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
-                scripts {
+                script{
                 /*sshagent(credentials:['UserandPassword']){
                     sh 'pwd'*/
+
                 def remote = [:]
                 remote.name = 'birc'
                 remote.host = "192.168.0.20"
