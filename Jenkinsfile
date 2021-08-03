@@ -10,6 +10,7 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
+                scripts {
                 /*sshagent(credentials:['UserandPassword']){
                     sh 'pwd'*/
                 def remote = [:]
@@ -21,6 +22,7 @@ pipeline{
                 remote.user = username
                 remote.password = password
                 sshCommand remote: remote, command: 'ls -la'
+                }
                 }
                 }
                 
