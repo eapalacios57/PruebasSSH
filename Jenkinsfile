@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    plink -v -x -a -T -C  -L 2224:190.85.106.202:2224 oracle@190.85.106.202 -pw S1st3m4s.* 
+                    plink -v -x -a -T -C   oracle@190.85.106.202 -pw S1st3m4s.* 
                     ls -la
 
                     '''
