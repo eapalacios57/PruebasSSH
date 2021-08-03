@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    echo -y plink birc@190.85.106.202 -pw s1st3m4s "exit"
+                    echo -y plink birc@190.85.106.202 -pw s1st3m4s
                     ls -la
                     '''
 
