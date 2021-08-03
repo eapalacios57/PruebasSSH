@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                     ssh -o StrictHostKeyChecking=no -l birc@190.85.106.202 'whoami'
+                     ssh -o StrictHostKeyChecking=no -l birc@190.85.106.202
                     '''
                     /*
                     sh '''
