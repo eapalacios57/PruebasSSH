@@ -12,7 +12,8 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    ssh -o StrictHostKeyChecking=no docker@192.168.0.20
+                    [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
+                    ssh docker@192.168.0.20
 
                     '''
 
