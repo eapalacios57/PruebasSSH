@@ -10,10 +10,18 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
+                sshagent(credentialsId: ['UserandPassword']){
+                    sh '''
+                    ssh docker@192.168.0.20
+
+                    '''
+
+                }
+                /*
                 script{
                 /*sshagent(credentials:['UserandPassword']){
                     sh 'pwd'*/
-
+                /*
                 def remote = [:]
                 remote.name = 'birc'
                 remote.host = "192.168.0.20"
@@ -23,6 +31,8 @@ pipeline{
                 remote.user = username
                 remote.password = password
                 sshCommand remote: remote, command: 'ls -la'
+                */
+
                 }
                 }
                 }
