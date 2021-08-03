@@ -14,8 +14,7 @@ pipeline{
                     sh 'pwd'*/
                 def remote = [:]
                    remote.name = 'birc'
-                   remote.host = "190.85.106.202"
-                   remote.port = 2224
+                   remote.host = "192.168.0.20"
                    remote.allowAnyHosts = true
                 withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'password', usernameVariable: 'username')]) {
                 // some block
