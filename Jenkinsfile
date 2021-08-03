@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    plink docker@192.168.0.20 -pw s1st3m4s -y
+                    plink -v -x -a -T -C docker@192.168.0.20 -pw s1st3m4s 
                     ls -la
 
                     '''
