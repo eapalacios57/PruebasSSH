@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['ssh_server_weblogic']){
                     sh '''
-                     ssh StrictHostKeyChecking=no -l birc@190.85.106.202
+                     ssh birc@190.85.106.202
                     '''
                     /*
                     sh '''
