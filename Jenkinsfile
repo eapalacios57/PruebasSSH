@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
-                sshagent(['UserandPassword']){
+                sshagent(['ssh_server_weblogic']){
                     sh '''
                      ssh -o StrictHostKeyChecking=no -l birc@190.85.106.202
                     '''
