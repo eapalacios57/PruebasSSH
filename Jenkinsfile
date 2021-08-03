@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    sudo apt -y install putty-tools
+                    su apt -y install putty-tools
 
                     plink docker@192.168.0.20 -pw s1st3m4s
 
