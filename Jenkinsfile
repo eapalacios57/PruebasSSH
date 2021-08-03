@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
-                sshagent(credentialsId: ['UserandPassword']){
+                sshagent(['UserandPassword']){
                     sh '''
                     ssh docker@192.168.0.20
 
