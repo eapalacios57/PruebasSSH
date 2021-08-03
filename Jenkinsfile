@@ -12,7 +12,8 @@ pipeline{
             steps {
                 sshagent(['UserandPassword']){
                     sh '''
-                    [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
+                    apt -y install putty-tools
+
                     plink docker@192.168.0.20 -pw s1st3m4s
 
                     '''
