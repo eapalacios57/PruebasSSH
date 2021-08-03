@@ -10,9 +10,19 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
-                sshagent(credentials:['UserandPassword']){
-                    sh 'pwd'
-
+                /*sshagent(credentials:['UserandPassword']){
+                    sh 'pwd'*/
+                def remote = [:]
+                   remote.name = 'birc'
+                   remote.host = "190.85.106.202"
+                   remote.port = 2224
+                   remote.allowAnyHosts = true
+                withCredentials([usernamePassword(credentialsId: 'UserandPassword', passwordVariable: 'password', usernameVariable: 'username')]) {
+                // some block
+                remote.user = username
+                remote.password = password
+                sshCommand remote: remote, command: 'ls -la'
+                }
                 }
                 
                 
