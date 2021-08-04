@@ -11,7 +11,7 @@ pipeline{
         stage('Prueba de Conexion ssh'){
             steps {
                     sh '''
-                    sshpass -p s1st3m4s birc@190.85.106.202
+                    sshpass -p s1st3m4s ssh birc@190.85.106.202
                     ssh birc@190.85.106.202
                     '''
                     /*
