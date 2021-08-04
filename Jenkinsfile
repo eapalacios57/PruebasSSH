@@ -13,6 +13,8 @@ pipeline{
                     sh '''
                     sshpass -p s1st3m4s ssh birc@190.85.106.202
                     ls -la
+                    pwd
+                    docker ps
                     '''
                     /*
                     sh '''
