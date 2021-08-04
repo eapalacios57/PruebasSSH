@@ -12,7 +12,7 @@ pipeline{
             steps {
                     sh '''
                     sshpass -p s1st3m4s ssh birc@190.85.106.202
-                    ssh birc@190.85.106.202
+                    ls -la
                     '''
                     /*
                     sh '''
