@@ -10,7 +10,6 @@ pipeline{
     stages {
         stage('Prueba de Conexion ssh'){
             steps {
-                sshagent(['ssh_server_weblogic']){
                     sh '''
                     sshpass -p s1st3m4s birc@190.85.106.202
                     ssh birc@190.85.106.202
@@ -39,7 +38,7 @@ pipeline{
                 sshCommand remote: remote, command: 'ls -la'
                 */
 
-                }
+                
                 }
                 }
                 
