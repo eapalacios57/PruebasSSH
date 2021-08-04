@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sshagent(['ssh_server_weblogic']){
                     sh '''
-                    sshpass -p s1st3m4s birc@192.168.100.158
+                    sshpass -p s1st3m4s birc@190.85.106.202
                     ssh birc@190.85.106.202
                     '''
                     /*
